@@ -15,8 +15,8 @@ def find_single_numbers(nums):
   #10 & 10 = 10
   while (rightmost_set_bit & n1xn2) == 0:
     rightmost_set_bit = rightmost_set_bit << 1 # 01 -> 10
-  num1, num2 = 0, 0
 
+  num1, num2 = 0, 0
   for num in nums: #xor one number by nums with the differntiating bit set, and the other by nums without it set
     if (num & rightmost_set_bit) != 0: #the bit is set
       num1 ^= num

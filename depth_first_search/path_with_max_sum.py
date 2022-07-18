@@ -21,14 +21,14 @@ class MaxPathSum:
     max_path_sum_left = self.find_max_path_sum_recursive(node.left)
     max_path_sum_right = self.find_max_path_sum_recursive(node.right)
 
-    max_path_sum_left = max(max_path_sum_left, 0)
+    max_path_sum_left = max(max_path_sum_left, 0) #if the max_path_sum for one side is negative, we just won't include it in our calculation
     max_path_sum_right = max(max_path_sum_right, 0)
 
     local_max_sum = max_path_sum_left + max_path_sum_right + node.val
 
-    self.global_max_sum = max(self.global_max_sum, local_max_sum)
+    self.global_max_sum = max(self.global_max_sum, local_max_sum) #try to set global max with this node as the root of the path
 
-    return max(max_path_sum_left, max_path_sum_right) + node.val
+    return max(max_path_sum_left, max_path_sum_right) + node.val #only return the max of the left or right (plus current node value)
 
 def main():
   maximumPathSum = MaxPathSum()

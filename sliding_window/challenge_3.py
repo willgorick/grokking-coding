@@ -3,10 +3,10 @@ def find_substring(str1, pattern):
   min_length = len(str1) + 1
   char_frequency = {}
 
-  for chr in pattern:
-    if chr not in char_frequency:
-      char_frequency[chr] = 0
-    char_frequency[chr] += 1
+  for char in pattern:
+    if char not in char_frequency:
+      char_frequency[char] = 0
+    char_frequency[char] += 1
 
   # try to extend the range [window_start, window_end]
   for window_end in range(len(str1)):

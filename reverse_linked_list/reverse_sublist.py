@@ -1,11 +1,9 @@
-from cgi import print_environ_usage
-import re
-
 
 class Node():
   def __init__(self, value, next=None):
     self.value = value
     self.next = next
+    
   def print_list(self):
     curr = self
     while curr is not None:

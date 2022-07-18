@@ -18,7 +18,7 @@ def find_target_subsets(nums, s):
 
 def count_subsets_dp(nums, s):
   n = len(nums)
-  dp = [[0 for s in range(s+1)] for i in range(n)]
+  dp = [[0 for _ in range(s+1)] for _ in range(n)]
 
   #0 sum column always has 1, the empty set
   for i in range(n):

@@ -2,7 +2,7 @@ from heapq import *
 
 class Stream:
   def __init__(self, nums, k):
-    self.min_heap = [] #k largest numbers
+    self.min_heap = [] #k largest numbers in a min heap so the kth largest is at the top
     for i in range(k):
       heappush(self.min_heap, nums[i])
     for i in range(k, len(nums)):

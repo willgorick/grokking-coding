@@ -2,7 +2,7 @@
 #can we split the numbers into two groups whose sums are equal.  This problem can be reduced to: can we find any subset of numbers whose sum is equal to half of the total sum
 def can_partition(nums):
   s = sum(nums)
-  #odd numbers can't be split evenluy
+  #odd numbers can't be split evenly
   if s%2 != 0:
     return False
 
@@ -54,16 +54,15 @@ def top_down_memoization(dp, nums, sum, ind):
 def bottom_up_dp(nums, s):
   target, n = int(s/2), len(nums)
 
-  dp = [[False for x in range(target +1)] for y in range(n)]
+  dp = [[False for _ in range(target +1)] for _ in range(n)]
 
   #populate the sum = 0 column, as we can always get '0' sum with an empty set
   for i in range(n):
     dp[i][0] = True
   
   #True only if the first number equals the required sum
-  for s in range(0, target + 1):
+  for s in range(1, target + 1):
     dp[0][s] = nums[0] == s
-
 
   for i in range(1, n):
     for s in range(1, target + 1):
@@ -72,7 +71,7 @@ def bottom_up_dp(nums, s):
         #proceed without the number
         dp[i][s] = dp[i-1][s]
       elif s >= nums[i]: #else if we can find a subset to get the remaining sum
-        dp[i][s] = dp[i-1][s - nums[i]] #if we were true for the index previous index without this number, at the sum - this number, then we should be true as well
+        dp[i][s] = dp[i-1][s - nums[i]] #if we were true for the previous index without this number, at the sum - this number, then we should be true as well
 
   #answer is in the bottom right corner
   return dp[n-1][s]
@@ -81,8 +80,8 @@ def bottom_up_dp(nums, s):
 
 def main():
   print("Can partition: " + str(can_partition([1, 2, 3, 4])))
-  print("Can partition: " + str(can_partition([1, 1, 3, 4, 7])))
-  print("Can partition: " + str(can_partition([2, 3, 4, 6])))
+  # print("Can partition: " + str(can_partition([1, 1, 3, 4, 7])))
+  # print("Can partition: " + str(can_partition([2, 3, 4, 6])))
 
 
 main()

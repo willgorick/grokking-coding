@@ -46,6 +46,7 @@ def can_construct(original, seqs):
         sources.append(child)
 
   return len(sorted_order) == len(original)
+  # return sorted_order == original
 
 
 def main():

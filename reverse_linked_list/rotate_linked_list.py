@@ -25,9 +25,8 @@ def rotate(head, rotations):
   rotations %= list_len #no need to do more rotations than the list length
   last_after_rotation = head
   skip_len = list_len - rotations
-  print(last_after_rotation.value)
-  print(skip_len)
-  for i in range(skip_len - 1): #one fewer so we are at the new final value after rotation, rather than the new head
+
+  for _ in range(skip_len - 1): #one fewer so we are at the new final value after rotation, rather than the new head
     last_after_rotation = last_after_rotation.next
   head = last_after_rotation.next #set new head
   last_after_rotation.next = None #de-cicularize the list

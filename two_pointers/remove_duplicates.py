@@ -2,11 +2,12 @@ def remove_duplicates(arr):
   # index of the next non-duplicate element
   next_non_duplicate = 1
 
-  i = 0
   for i in range(len(arr)):
+    print(arr, i, next_non_duplicate)
     if arr[next_non_duplicate - 1] != arr[i]:
       arr[next_non_duplicate] = arr[i]
       next_non_duplicate += 1
+  print(arr)
   return next_non_duplicate
 
 def remove_element(arr, key):
@@ -20,7 +21,7 @@ def remove_element(arr, key):
 
 def main():
   print("Array new length: " +
-        str((remove_duplicates([2, 3, 3, 3, 6, 9, 9]))))
+        str((remove_duplicates([2, 3, 3, 6, 6, 9, 9]))))
   print("Array new length: " +
         str((remove_duplicates([2, 2, 2, 11]))))
 

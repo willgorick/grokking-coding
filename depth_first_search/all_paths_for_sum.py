@@ -21,6 +21,7 @@ def dfs(curr_node, goal, curr_path, all_paths):
     dfs(curr_node.left, goal-curr_node.val, curr_path, all_paths) 
     dfs(curr_node.right, goal-curr_node.val, curr_path, all_paths)
   
+  #backtracking because python lists are always pass by value not pass by refernce
   del curr_path[-1]
 
 def main():

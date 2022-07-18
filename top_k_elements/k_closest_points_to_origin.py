@@ -20,7 +20,7 @@ def k_closest(points, k):
     heappush(result, points[i])
 
   for i in range(k, len(points)):
-    if points[i].dist() < result[0].dist():
+    if points[i].dist() < result[0].dist(): #if curr is closer than furthest away in
       heappop(result)
       heappush(result, points[i])
   return result

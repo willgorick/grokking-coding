@@ -1,4 +1,3 @@
-import time
 
 def insert_interval(intervals, new_interval):
   start = new_interval[0]

@@ -5,6 +5,7 @@ def find_letter_case_string_permutations(str):
   for i in range(len(str)):
     if str[i].isalpha(): #only handle letters, skip numbers
       n = len(perms)
+      print(n)
       for j in range(n):
         chars = list(perms[j])
         chars[i] = chars[i].swapcase()

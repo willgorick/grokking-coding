@@ -1,12 +1,11 @@
 def missing_number(nums):
   i, n  = 0, len(nums)
   while i < n:
-    j = nums[i] # j = 3
-    if j < n and j != nums[j]: #only sorting 0 - (n-1)
+    j = nums[i] #proper index of number
+    if j < n and i != j: #only sorting 0 - (n-1), and only swapping if at wrong index
       nums[i], nums[j] = nums[j], nums[i]
     else:
       i += 1
-    print(nums, i)
   for i in range(n):
     if nums[i] != i: #we were unable to put the correct number here, meaning that number is missing
       return i

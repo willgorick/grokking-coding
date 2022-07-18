@@ -24,7 +24,7 @@ def balanced_parens(num):
 
 def recursive_parens(num):
   result = []
-  parentheses_string = [0 for x in range(2*num)]
+  parentheses_string = [0 for _ in range(2*num)]
   generate_recursive_parens(num, 0, 0, parentheses_string, 0, result)
   return result
 

@@ -1,5 +1,4 @@
 
-from logging import captureWarnings
 
 def solve_knapsack(profits, weights, cap):
   # return brute_recursive(profits, weights, cap, 0)

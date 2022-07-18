@@ -11,8 +11,10 @@ def rearrange(head):
   while fast.next is not None and fast.next.next is not None:
     slow = slow.next
     fast = fast.next.next
-  flipped_end = reverse(slow)
+  flipped_end = reverse(slow) #reverse the second half
   while head is not None and flipped_end is not None:
+    #basically set original head's next to head of flipped, then advance head to it's original next
+    #then set flipped head's next to the original's current head, then set flipped head to it's original next
     temp = head.next #set first half's next to the second half, then advance first half head to it's original next
     head.next = flipped_end
     head = temp

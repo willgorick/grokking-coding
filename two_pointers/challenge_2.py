@@ -4,7 +4,6 @@ def backspace_compare(str1, str2):
   while pointer1 >= 0 or pointer2 >= 0:
     pointer1 = get_next_valid_char_index(str1, pointer1)
     pointer2 = get_next_valid_char_index(str2, pointer2)
-    print(pointer1, pointer2)
     if pointer1 < 0 and pointer2 < 0:
       return True
     if pointer1 < 0 or pointer2 < 0:

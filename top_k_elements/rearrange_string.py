@@ -13,12 +13,12 @@ def rearrange(string):
   while max_heap:
     freq, char = heappop(max_heap)
     # add back the previous char if it's frequency is still greater than 0
-    if prev_char and -prev_freq > 0:
-      heappush(max_heap, (prev_freq, prev_char))
+    if prev_char and prev_freq > 0:
+      heappush(max_heap, (-prev_freq, prev_char))
     # append current character to string and decrement its count
     result.append(char)
     prev_char = char
-    prev_freq = freq+1 #decrement by 1 (freaking negatives)
+    prev_freq = -freq-1 
   
   return ''.join(result) if len(result) == len(string) else False
 

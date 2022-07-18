@@ -11,6 +11,7 @@ def find_max_cap(capital, profits, num_projects, initial_cap):
     while min_cap_heap and min_cap_heap[0][0] <= available_cap: #til the end of the heap, if the next highest heap has a cap value less than or equal to our available, add it to our profit heap
       capital, i = heappop(min_cap_heap)
       heappush(max_prof_heap, (-profits[i], i)) #has to be negative for max heap
+      
     if not max_prof_heap: #no projects left that we have enough capital for
       break
       

@@ -30,12 +30,12 @@ def find_trees(nodes, edges):
     if in_degree[key] == 1:
       leaves.append(key)
 
-  #4 Remove leaves level by level and subtract each leave's child's in-degrees.  Repeat until we only have 1 or 2 nodes, which will be our answer.  Any node that has already beena leaf can't be the root of the min height tree, because its adjacent non-leaf node will always be a better candidate.  The last 1 or 2 remaining "leaves" had the most connections to other nodes and are the roots of our MHTs
+  #4 Remove leaves level by level and subtract each leave's child's in-degrees.  Repeat until we only have 1 or 2 nodes, which will be our answer.  Any node that has already been a leaf can't be the root of the min height tree, because its adjacent non-leaf node will always be a better candidate.  The last 1 or 2 remaining "leaves" had the most connections to other nodes and are the roots of our MHTs
   total_nodes = nodes
   while total_nodes > 2:
     leaves_size = len(leaves)
     total_nodes -= leaves_size
-    for i in range(leaves_size):
+    for _ in range(leaves_size):
       vertex = leaves.popleft()
       for child in graph[vertex]:
         in_degree[child] -= 1

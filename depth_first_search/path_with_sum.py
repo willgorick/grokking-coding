@@ -1,5 +1,3 @@
-from tkinter.tix import Tree
-
 
 class TreeNode:
   def __init__(self, val):

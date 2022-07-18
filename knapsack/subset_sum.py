@@ -1,6 +1,6 @@
 def subset_sum(nums, target):
   n = len(nums)
-  dp = [[False for s in range(target+1)] for i in range(n)]
+  dp = [[False for _ in range(target+1)] for _ in range(n)]
 
   for i in range(n):
     dp[i][0] = True #any set can get a sum of 0 by excluding numbers
@@ -19,7 +19,7 @@ def subset_sum(nums, target):
 #solving the problem with O(s) space
 def subset_sum_smaller(nums, target):
   n = len(nums)
-  dp = [False for x in range(target+1)]
+  dp = [False for _ in range(target+1)]
 
   dp[0] = True #we can get sum 0 from empty set
 

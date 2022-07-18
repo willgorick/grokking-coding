@@ -14,7 +14,7 @@ def recursive_count_paths(node, goal, curr_path):
   curr_path.append(node.val) ## add curr_node to path 
   path_count, path_sum = 0, 0
 
-  for i in range(len(curr_path)-1, -1, -1): #find sum of all subpaths in current path list
+  for i in range(len(curr_path)-1, -1, -1): #find sum of all subpaths in current path list, starting from the bottom
     path_sum += curr_path[i]
     if path_sum == goal:
       path_count += 1

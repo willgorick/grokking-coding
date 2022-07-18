@@ -11,7 +11,7 @@ def merge(intervals_a, intervals_b):
 
     b_overlaps_a = b_start >= a_start and b_start <= a_end #b starts after a start and before a ends
 
-    if (a_overlaps_b or b_overlaps_a):
+    if (a_overlaps_b or b_overlaps_a): #merge the two intervals
       result.append([max(a_start, b_start), min(a_end, b_end)])
     if a_end < b_end: #move to next interval of whichever interval set ends earlier
       i += 1

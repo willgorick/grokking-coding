@@ -7,7 +7,7 @@ def freq_sort(letters):
     freq_map[x] = freq_map.get(x, 0) + 1
   
   for letter, count in freq_map.items():
-    heappush(max_heap, (-count, letter)) #negative so highest ind is first
+    heappush(max_heap, (-count, letter)) #negative so highest ind is first (max heap)
 
   while max_heap:
     count, letter = heappop(max_heap)

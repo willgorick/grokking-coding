@@ -1,6 +1,5 @@
 
 def flip_and_invert(image):
-  flip = []
   for row in image:
     for i in range((len(row)+1)//2): #need the plus 1 so we xor the middle element
       row[i], row[len(row)-1-i] = row[len(row)-1-i]^1, row[i]^1

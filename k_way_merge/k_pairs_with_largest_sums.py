@@ -14,7 +14,7 @@ def k_pairs_with_largest_sum(nums1, nums2, k):
           heappush(min_heap, (nums1[i]+nums2[j], i, j))
   result = []
   while min_heap:
-    num, i, j = heappop(min_heap)
+    _, i, j = heappop(min_heap)
     result.append([nums1[i], nums2[j]])
   return result
 

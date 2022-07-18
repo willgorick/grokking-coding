@@ -13,7 +13,7 @@ def max_load(jobs):
   max_load, curr_load = 0, 0
   min_heap = []
   for j in jobs:
-    while len(min_heap) > 0 and j.start >= min_heap[0].end:
+    while len(min_heap) > 0 and j.start >= min_heap[0].end: #remove all jobs that ended before current job starts, but first decrement their load from our curr_load
       curr_load -= min_heap[0].load
       heappop(min_heap)
     heappush(min_heap, j)

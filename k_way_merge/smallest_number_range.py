@@ -11,7 +11,6 @@ def find_smallest_range(lists):
   for arr in lists:
     heappush(min_heap, (arr[0], 0, arr)) #number, index, list
     curr_max = max(curr_max, arr[0]) #max is largest of three starting numbers
-
   #take smallest element from min heap, if it gives us a smaller range, update the range, add  next element from array if present
   while len(min_heap) == len(lists):
     num, i, arr = heappop(min_heap)
@@ -28,6 +27,8 @@ def find_smallest_range(lists):
 def main():
   print("Smallest range is: " +
         str(find_smallest_range([[1, 5, 8], [4, 12], [7, 8, 10]])))
+  print("Smallest range is: " +
+        str(find_smallest_range([[1,9], [4, 12], [7, 10, 16]])))
 
 
 main()

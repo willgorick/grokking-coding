@@ -1,5 +1,4 @@
 from collections import deque
-from re import A
 
 class Node:
   def __init__(self, value, next=None):
@@ -28,17 +27,17 @@ def is_palindrome_constant(head):
   while fast.next is not None and fast.next.next is not None:
     slow = slow.next
     fast = fast.next.next
-  reverse_first = reverse(slow)
-  copy_reverse_first = reverse_first
+  reverse_second = reverse(slow)
+  copy_reverse_second = reverse_second
 
-  while head is not None and reverse_first is not None:
-    if head.value != reverse_first.value:
+  while head is not None and reverse_second is not None:
+    if head.value != reverse_second.value:
       return False
     head = head.next
-    reverse_first = reverse_first.next
-  reverse(copy_reverse_first)
+    reverse_second = reverse_second.next
+  reverse(copy_reverse_second)
 
-  if head is None or reverse_first is None:
+  if head is None or reverse_second is None:
     return True
   return False
 

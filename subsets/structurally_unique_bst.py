@@ -1,8 +1,6 @@
-from turtle import left, right
-
 
 class TreeNode:
-  def __init__(self, val):
+  def __init__(self, val, left=None, right=None):
     self.val = val
     self.left = left
     self.right = right
@@ -14,7 +12,6 @@ def find_unique_trees(n):
 
 def find_trees_recursive(start, end):
   result = []
-  print(start,end)
   if start > end: #for 1 as the root, 1,0 (left) is None
     # for 2 as the root,  (right is none)
     result.append(None)
@@ -26,11 +23,9 @@ def find_trees_recursive(start, end):
     for left_tree in left_subtrees:
       for right_tree in right_subtrees:
         root = TreeNode(i)
-        print(i, left_tree, right_tree)
         root.left = left_tree
         root.right = right_tree
         result.append(root)
-        print(result)
   return result
 
 def main():
@@ -39,7 +34,7 @@ def main():
   print("Total trees: " + str(len(trees_2)))
   print("Total trees: " + str(len(trees_3)))
   for tree in trees_2:
-    print(tree.val, tree.left, tree.right)
+    print(tree.val)
     left = tree.left
     right = tree.right
     if left:

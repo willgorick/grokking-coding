@@ -39,7 +39,7 @@ def bottom_up(nums):
   s = sum(nums)
   n = len(nums)
   target = int(s/2)+1
-  dp = [[False for x in range(target)] for y in range(n)]
+  dp = [[False for _ in range(target)] for _ in range(n)]
 
   # populate the s=0 columns, as we can always form '0' sum with an empty set
   for i in range(0, n):

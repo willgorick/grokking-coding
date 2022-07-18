@@ -7,8 +7,8 @@ def evaluate(expression):
     for i in range(len(expression)):
       char = expression[i]
       if not char.isdigit(): #the operators
-        left = evaluate(expression[0:i])
-        right = evaluate(expression[i+1:])
+        left = evaluate(expression[0:i]) #1
+        right = evaluate(expression[i+1:]) #2 * 3 -> 6 recursively
         for part1 in left:
           for part2 in right:
             if char == '+':

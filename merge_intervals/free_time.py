@@ -27,19 +27,19 @@ def find_free_time(schedule):
   result, min_heap = [], []
 
   for i in range(n):
-    heappush(min_heap, EmployeeInterval(schedule[i][0], i, 0))
-  prev_int = min_heap[0].interval
+    heappush(min_heap, EmployeeInterval(schedule[i][0], i, 0)) #heappush everyone's first interval
 
+  prev_int = min_heap[0].interval
   while min_heap:
     top = heappop(min_heap)
     if prev_int.end < top.interval.start: #no overlap between previous and current
-      result.append(Interval(prev_int.end, top.interval.start))
+      result.append(Interval(prev_int.end, top.interval.start)) #time between prev interval end and current interval start
       prev_int = top.interval
     else: #intervals overlap, update prev interval to earlier if current ends earlier
-      if prev_int.end < top.interval.end:
+      if prev_int.end < top.interval.end: #basically make sure ending of our interval is the later of the two
         prev_int = top.interval
     employee_sched = schedule[top.employee_index]
-    if len(employee_sched) > top.interval_index + 1:
+    if len(employee_sched) > top.interval_index + 1: #if this employee has more intervals, push their next one to the queue
       heappush(min_heap, EmployeeInterval(employee_sched[top.interval_index +1], top.employee_index, top.interval_index+1))
   return result
   

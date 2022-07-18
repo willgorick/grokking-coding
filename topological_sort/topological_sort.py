@@ -44,11 +44,13 @@ def topological_sort(vertices, edges):
 
 
 def main():
+  # print("Topological sort: " +
+  #       str(topological_sort(4, [[3, 2], [3, 0], [2, 0], [2, 1]])))
   print("Topological sort: " +
         str(topological_sort(4, [[3, 2], [3, 0], [2, 0], [2, 1]])))
-  print("Topological sort: " +
-        str(topological_sort(5, [[4, 2], [4, 3], [2, 0], [2, 1], [3, 1]])))
-  print("Topological sort: " +
-        str(topological_sort(7, [[6, 4], [6, 2], [5, 3], [5, 4], \
-               [3, 0], [3, 1], [3, 2], [4, 1]])))
+  # print("Topological sort: " +
+  #       str(topological_sort(5, [[4, 2], [4, 3], [2, 0], [2, 1], [3, 1]])))
+  # print("Topological sort: " +
+  #       str(topological_sort(7, [[6, 4], [6, 2], [5, 3], [5, 4], \
+  #              [3, 0], [3, 1], [3, 2], [4, 1]])))
 main()

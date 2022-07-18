@@ -57,7 +57,7 @@ def top_down_memoization(dp, nums, sum, currentIndex):
 def bottom_up_dynamic(nums, sum):
   #I am so damn tired
   n = len(nums)
-  dp = [[0for x in range(sum+1)] for y in range(n)]
+  dp = [[0 for _ in range(sum+1)] for _ in range(n)]
 
   for i in range(n):
     dp[i][0] = 1 #can get 0 sum from any number via the empty set
@@ -70,7 +70,6 @@ def bottom_up_dynamic(nums, sum):
       dp[i][s] = dp[i-1][s] #if we could get this sum without the number x times, we can get it at this index by excluding the same number of times
       if s >= nums[i]: #if number can be safely added
         dp[i][s] += dp[i-1][s-nums[i]] #add the number of times we could get this sum - nums[i] without nums[i]
-
   return dp[n-1][sum]
 
 def bottom_up_1d_array(nums, sum):
@@ -85,7 +84,7 @@ def bottom_up_1d_array(nums, sum):
     for s in range(sum, -1, -1):
       if s >= nums[i]: #if number can be safely added
         dp[s] += dp[s-nums[i]] #add the number of times we could get this sum - nums[i] without nums[i]
-
+  print(dp)
   return dp[sum]
 
 def main():

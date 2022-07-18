@@ -29,7 +29,7 @@ class TreeDiameter:
       #update the global tree diameter
       self.tree_diameter = max(self.tree_diameter, diameter)
     
-    #height of the current node will be equal to the mix of the heights of left + right + 1 for the current node
+    #height of the current node will be equal to the max of the heights of left/right + 1 for the current node
     return max(left_tree_height, right_tree_height) + 1
 
 def main():

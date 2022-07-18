@@ -3,7 +3,7 @@ def find_first_k_missing_positive(nums, k):
   missing = []
   while i < n:
     j = nums[i]-1
-    if nums[i] > 0 and nums[i] <= len(nums) and nums[i] != nums[j]:
+    if nums[i] > 0 and nums[i] <= len(nums) and nums[i] != nums[j]: #if number is within our array len, but out of place, put it here in place
       nums[i], nums[j] = nums[j], nums[i]
     else:
       i += 1
@@ -11,7 +11,7 @@ def find_first_k_missing_positive(nums, k):
   for x in range(len(nums)):
     if nums[x] != x + 1:
       missing.append(x+1)
-      extra_nums.add(nums[x])
+      extra_nums.add(nums[x]) #make sure we don't add any of these when we're incrementing out output later
       if len(missing) == k:
         return missing
   i  = 1

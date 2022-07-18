@@ -32,7 +32,6 @@ def smallest_subarray_greater2(S, arr):
     curr_sum += arr[end_ind]
     while curr_sum >= S:
       min_length = min(min_length, end_ind - start_ind + 1)
-      print(start_ind, end_ind, min_length)
       curr_sum -= arr[start_ind]
       start_ind += 1
   if min_length == sys.maxint:

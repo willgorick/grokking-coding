@@ -1,11 +1,11 @@
 def square_sorted_array(arr):
   start, end, ind = 0, len(arr)-1, len(arr)-1
-  result = [0 for x in range(len(arr))]
+  result = [0 for _ in range(len(arr))]
 
   while start < end:
     start_sq = arr[start]*arr[start]
     end_sq = arr[end]*arr[end]
-    if start_sq > end_sq:
+    if start_sq > end_sq: #start from the end of our result array and add highest numbers first
       result[ind] = start_sq
       start += 1
     else:

@@ -5,10 +5,9 @@ def top_k_numbers(nums, k):
   for i in range(k):
     heappush(result, nums[i])
   for i in range(k, len(nums)):
-    if result[0] < nums[i]:
+    if result[0] < nums[i]: #if current number is larger than smallest in our heap
       heappop(result)
       heappush(result, nums[i])
-    #if the smallest number in our heap is bigger than the current number, leave it in the heap
   return result
 
 def main():

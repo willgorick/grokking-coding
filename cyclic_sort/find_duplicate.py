@@ -1,12 +1,11 @@
 def find_duplicate(nums):
   i = 0
   while i < len(nums):
-    # print(nums, i)
     j = nums[i]-1
     if nums[i] != nums[j]:
       nums[j], nums[i] = nums[i], nums[j]
     else:
-      if i == nums[i]: #the numbers were swapped and the number is one spot past where it should be 
+      if i == nums[i]: #the numbers were swapped previously, meaning they should be sorted but the number is one spot past where it should be 
         return nums[i]
       i += 1
   return nums

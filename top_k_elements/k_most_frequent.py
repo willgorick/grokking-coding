@@ -10,7 +10,7 @@ def k_most_freq(nums, k):
   for num, freq in num_freq.items():
     heappush(min_heap, (freq, num))
     if len(min_heap) > k:
-      heappop(min_heap)
+      heappop(min_heap) #remove least frequent number in heap
 
   result = []
   while min_heap:

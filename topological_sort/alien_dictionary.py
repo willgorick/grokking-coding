@@ -1,6 +1,5 @@
 
 from collections import deque
-from pydoc import source_synopsis
 
 def find_order(words):
   if len(words) == 0:
@@ -16,7 +15,7 @@ def find_order(words):
 
 
   #2. build the graph
-  for i in range(0, len(words)-1):
+  for i in range(len(words)-1):
     w1, w2 = words[i], words[i+1]
     for j in range(min(len(w1), len(w2))):
        parent, child = w1[j], w2[j]
@@ -28,12 +27,11 @@ def find_order(words):
 
   #3. Find all sources
   sources = deque()
-  print(in_degree)
-  print(graph)
+
   for key in in_degree:
     if in_degree[key] == 0:
       sources.append(key)
-
+      
   #4. For each source, add it to the sorted_order an subtract one from all of it's children's in-degrees.  If a child's in-degree becomes zero, add it to the source queue
   sorted_order = []
   while sources:
@@ -51,8 +49,8 @@ def find_order(words):
 
 
 def main():
-  # print("Character order: " + find_order(["ba", "bc", "ac", "cab"]))
-  # print("Character order: " + find_order(["cab", "aaa", "aab"]))
+  print("Character order: " + find_order(["ba", "bc", "ac", "cab"]))
+  print("Character order: " + find_order(["cab", "aaa", "aab"]))
   print("Character order: " + find_order(["ywx", "wz", "xww", "xz", "zyy", "zwz"]))
 
 

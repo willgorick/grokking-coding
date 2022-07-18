@@ -3,7 +3,7 @@ def all_missing_nums(nums):
   i, n = 0, len(nums)
   while i < n:
     j = nums[i] - 1 #index where nums[i] shoud be
-    if nums[i] != nums[j]:  #if they're equal, that means either it's already sorted, or we found a duplicate, and we can move on
+    if nums[i] != nums[j]:  #if they're equal, that means either it's already sorted, or we found a duplicate, and we can move on....can't just use i != j here because of the duplicates
       nums[i], nums[j] = nums[j], nums[i]
     else:
       i += 1
