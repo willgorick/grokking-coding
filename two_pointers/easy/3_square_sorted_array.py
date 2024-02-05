@@ -6,6 +6,7 @@ Space Complexity: O(1) - 3 pointers
 """
 def square_sorted_array(arr):
   res = [0 for _ in arr]
+  #start at the front and back of the sorted array because those will be the largest squared numbers
   l, r, res_ind = 0, len(arr)-1, len(arr)-1
   while l <= r:
     l_squared, r_squared = arr[l]*arr[l], arr[r]*arr[r]

@@ -19,7 +19,7 @@ class Solution:
           triplets.append([-target, arr[l], arr[r]])
           l += 1
           r -= 1
-          #skip duplicate l and r values
+          #skip duplicate l and r values by checking if the new index holds the same number as the previous index
           while l < r and arr[l] == arr[l-1]:
             l += 1
           while l < r and arr[r] == arr[r+1]:

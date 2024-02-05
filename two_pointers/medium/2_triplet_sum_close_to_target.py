@@ -6,8 +6,6 @@ Time Complexity: O(n^2) -
 Space Complexity: O(n) for sorting
 """
 
-import math
-
 class Solution:
   def triplet_sum_close_to_target(self, arr, target_sum):
     arr.sort()
@@ -39,7 +37,7 @@ class Solution:
         # we want our triple to be smaller because it is currently larger than the target_sum
         else:
           r -= 1
-    return target_sum - closest_distance
+    return closest_sum
 
 def main():
   sol = Solution()

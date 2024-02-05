@@ -16,8 +16,10 @@ class Solution:
     potential_next_number = 0
     while(potential_next_number < len(arr)):
       # check if current number is equal to the last non-duplicate we found
+      # next_non_duplicate - 1 is the last non-duplicate we found
       # if it is not equal, then we've found a new non-duplicate, and we should put it at the next_non_duplicate index and increment that index
-      if arr[next_non_duplicate - 1] != arr[potential_next_number]:
+      last_non_duplicate_number = next_non_duplicate-1
+      if arr[last_non_duplicate_number] != arr[potential_next_number]:
         arr[next_non_duplicate] = arr[potential_next_number]
         next_non_duplicate += 1
       # regardless of if we found a non-duplicate, we should increment the current index we're looking at
