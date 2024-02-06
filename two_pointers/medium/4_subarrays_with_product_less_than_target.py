@@ -1,6 +1,8 @@
 """
 Given an array with positive numbers and a positive target number, find all of its contiguous subarrays whose product is less than the target number.
 
+Time Complexity: O(n^3), O(n) for the main sliding window + O(n^2) for creating the subarrays in the worst case so O(n^3)
+Space Complexity: O(n^3), O(n) space for each subarray and O(n^2) subarrays in the worst case
 """
 from collections import deque
 
@@ -26,6 +28,9 @@ class Solution:
               result.append(list(temp_list))
       return result
 
-sol = Solution()
-print(sol.subarrays_with_smaller_product([2, 5, 3, 10], 30))
-print(sol.subarrays_with_smaller_product([8, 2, 6, 5], 50))
+def main():
+    sol = Solution()
+    print(sol.subarrays_with_smaller_product([2, 5, 3, 10], 30))
+    print(sol.subarrays_with_smaller_product([8, 2, 6, 5], 50))
+
+main()
