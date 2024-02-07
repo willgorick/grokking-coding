@@ -4,8 +4,11 @@ We are given an array containing positive and negative numbers. Suppose the arra
 If, while moving forward, we reach the end of the array, we will jump to the first element to continue the movement.
 If, while moving backward, we reach the beginning of the array, we will jump to the last element to continue the movement.
 Write a method to determine if the array has a cycle. The cycle should have more than one element and should follow one direction which means the cycle should not contain both forward and backward movements.
-Time Complexity:
-Space Complexity:
+
+Time Complexity: O(n^2) - looping through each element and attempting to find a cycle for each so n^2
+Space Complexity: O(1) just pointers
+
+NOTE: We could improve our time complexity to O(n) by keeping track of each number we've looked at and whether or not it results in a cycle (this would allow us to skip that number in the outer for loop, or if we encounter it from any other starting number).  However, this would require us to include a set of space O(n).
 
 """
 class Node:
