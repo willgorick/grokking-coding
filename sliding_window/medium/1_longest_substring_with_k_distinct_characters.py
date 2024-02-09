@@ -32,7 +32,7 @@ class Solution:
 
 def main():
   sol = Solution()
-  print(sol.longest_substring(str1="araaci", k=2))
+  print(sol.longest_substring("araaci", 2))
   print(sol.longest_substring("araaci", 1))
   print(sol.longest_substring("cbbebi", 3))
   
