@@ -17,13 +17,14 @@ class Solution:
       curr_letters[str1[end]] += 1
       if len(curr_letters) <= k:
         max_length = max(max_length, end-start+1)
-      else:
-        while len(curr_letters) > k:
-          start_letter = str1[start]
-          curr_letters[start_letter] -= 1
-          if curr_letters[start_letter] == 0:
-            del curr_letters[start_letter]
-          start += 1
+
+      #while too many letters, keep advancing the start pointer forward until one of our letter counts goes to zero
+      while len(curr_letters) > k:
+        start_letter = str1[start]
+        curr_letters[start_letter] -= 1
+        if curr_letters[start_letter] == 0:
+          del curr_letters[start_letter]
+        start += 1
       
     return max_length
 
