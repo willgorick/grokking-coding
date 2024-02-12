@@ -8,7 +8,7 @@ Space Complexity:
 
 class Solution:
     def function_name(self, arr):
-      pass
+        pass
 
 
 def main():
