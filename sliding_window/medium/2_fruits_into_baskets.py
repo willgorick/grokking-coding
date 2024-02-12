@@ -15,33 +15,34 @@ Space Complexity: O(k)
 
 from collections import defaultdict
 
+
 class Solution:
-  def fruit_into_baskets(self, fruits):
-      max_length = 0
-      baskets = defaultdict(int)
-      start = 0
+    def fruit_into_baskets(self, fruits):
+        max_length = 0
+        baskets = defaultdict(int)
+        start = 0
 
-      for end in range(len(fruits)):
-        curr_fruit = fruits[end]
-        baskets[curr_fruit] += 1
-        if len(baskets) <= 2:
-          max_length = max(max_length, end-start+1)
-        while len(baskets) > 2:
-          start_fruit = fruits[start]
-          baskets[start_fruit] -= 1
-          if baskets[start_fruit] == 0:
-            del baskets[start_fruit]
-          start += 1
+        for end in range(len(fruits)):
+            curr_fruit = fruits[end]
+            baskets[curr_fruit] += 1
+            if len(baskets) <= 2:
+                max_length = max(max_length, end-start+1)
+            while len(baskets) > 2:
+                start_fruit = fruits[start]
+                baskets[start_fruit] -= 1
+                if baskets[start_fruit] == 0:
+                    del baskets[start_fruit]
+                start += 1
 
-      return max_length
+        return max_length
 
 
 def main():
-  sol = Solution()
-  print("Maximum number of fruits: "
+    sol = Solution()
+    print("Maximum number of fruits: "
           + str(sol.fruit_into_baskets(['A', 'B', 'C', 'A', 'C'])))
     print("Maximum number of fruits: "
           + str(sol.fruit_into_baskets(['A', 'B', 'C', 'B', 'B', 'C'])))
-  
+
 
 main()
