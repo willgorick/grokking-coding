@@ -6,10 +6,11 @@ Space Complexity: O(n) for the result array
 
 """
 
+
 class Solution:
     def find_all_duplicate_numbers(self, nums):
         i = 0
-        #just cyclic sort and then check for the number out of place
+        # just cyclic sort and then check for the number out of place
         while i < len(nums):
             proper_index = nums[i]-1
             if nums[i] != nums[proper_index]:
@@ -23,11 +24,10 @@ class Solution:
         return duplicates
 
 
-
 def main():
     sol = Solution()
     print(sol.find_all_duplicate_numbers([3, 4, 4, 5, 5]))
     print(sol.find_all_duplicate_numbers([5, 4, 7, 2, 3, 5, 3]))
-  
+
 
 main()

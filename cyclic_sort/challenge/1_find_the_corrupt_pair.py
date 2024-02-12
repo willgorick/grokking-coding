@@ -6,6 +6,7 @@ Space Complexity: O(1)
 
 """
 
+
 class Solution:
     def find_the_corrupt_pair(self, nums):
         i = 0
@@ -16,17 +17,15 @@ class Solution:
             else:
                 i += 1
         for i in range(len(nums)):
-            if i != nums[i] -1:
+            if i != nums[i] - 1:
                 return [nums[i], i+1]
         return [-1, -1]
-        
 
 
 def main():
     sol = Solution()
     print(sol.find_the_corrupt_pair([3, 1, 2, 5, 2]))
     print(sol.find_the_corrupt_pair([3, 1, 2, 3, 6, 4]))
-    
-  
+
 
 main()

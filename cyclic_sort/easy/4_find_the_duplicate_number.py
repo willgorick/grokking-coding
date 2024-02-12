@@ -6,10 +6,11 @@ Space Complexity: O(1)
 
 """
 
+
 class Solution:
     def find_the_duplicate_number(self, nums):
         i = 0
-        #just cyclic sort and then check for the number out of place
+        # just cyclic sort and then check for the number out of place
         while i < len(nums):
             proper_index = nums[i]-1
             if nums[i] != nums[proper_index]:
@@ -22,12 +23,11 @@ class Solution:
         return -1
 
 
-
 def main():
     sol = Solution()
     print(sol.find_the_duplicate_number([1, 4, 4, 3, 2]))
     print(sol.find_the_duplicate_number([2, 1, 3, 3, 5, 4]))
     print(sol.find_the_duplicate_number([2, 4, 1, 4, 4]))
-  
+
 
 main()

@@ -7,11 +7,12 @@ Space Complexity: O(1)
 
 """
 
+
 class Solution:
     def cyclic_sort(self, nums):
         i = 0
         while i < len(nums):
-            proper_index = nums[i] -1
+            proper_index = nums[i] - 1
             if nums[i] != nums[proper_index]:
                 nums[i], nums[proper_index] = nums[proper_index], nums[i]
             else:
@@ -24,7 +25,6 @@ def main():
     print(sol.cyclic_sort([3, 1, 5, 4, 2]))
     print(sol.cyclic_sort([2, 6, 4, 3, 1, 5]))
     print(sol.cyclic_sort([1, 5, 6, 4, 3, 2]))
-  
+
 
 main()
-
