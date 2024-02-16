@@ -1,0 +1,25 @@
+Problem Characteristics
+
+Monotonic Stacks are typically useful when dealing with problems that involve analyzing sequences or arrays, especially when you need to find the next or previous larger or smaller element for each element in the array. If you encounter a problem where the solution seems to require some sort of sequential step-by-step comparison, it's likely a good candidate for using a Monotonic Stack.
+
+Example Scenarios
+
+One classic sign that a Monotonic Stack might be helpful is when the problem description mentions finding the "next greater element" or the "next smaller element" in an array. Problems that involve finding maximum areas, such as in histograms, can also be solved effectively using Monotonic Stacks. Remember, the key is to identify patterns where a sequential step-by-step comparison is necessary.
+
+
+Psuedocode:
+
+Monotonically Increasing:
+create an empty stack
+for each element in the array:
+    while stack is not empty AND top of stack is more than the current element:
+        pop the stack
+    push the current element to stack
+
+
+Monotonically Decreasing:
+create an empty stack
+for each element in the array:
+    while stack is not empty AND top of stack is less than the current element:
+        pop the stack
+    push the current element to stack
